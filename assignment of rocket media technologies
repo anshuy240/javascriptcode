@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int sockMerchant(int n,int *ar) {
+    int i, pair=0,count=1;
+    sort(ar,ar+n);
+    for(i=0;i<n;i++){
+        if(ar[i]==ar[i+1]){
+            count++;
+        }
+        else if(ar[i]!=ar[i+1]){
+            pair = pair + (count / 2);
+            count = 1;
+        }
+    }
+    return pair;
+}
+
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+      cin>>arr[i];
+    cout<<sockMerchant(n,arr)<<endl;  
+    return 0;
+}
