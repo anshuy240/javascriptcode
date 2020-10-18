@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		JavaScript 
+	</title> 
+</head> 
+
+<body style="text-align:center;" id="body"> 
+	<h1 style="color:green;"> 
+		</h1> 
+	<p id="UP" style="font-size: 16px;"> 
+
+	</p> 
+	<button onclick="run()"> 
+		click here 
+	</button> 
+	<p id="DOWN" style="color:green; 
+							font-size: 20px; 
+							font-weight: bold;"> 
+	</p> 
+	<script> 
+		var el_up = document.getElementById("UP"); 
+		var el_down = document.getElementById("DOWN"); 
+		var arr = [10,10,10,10,20,30,30,30,30,30,30,30,40,40,40,40,40]; 
+		var sort_arr = arr.slice().sort(); 
+		var count;
+		el_up.innerHTML = "Original Array = [" + arr + "]"; 
+
+		function run() {
+		    count=0;
+			for (var i = 0; i < sort_arr.length - 1; i++) { 
+				if (sort_arr[i + 1] == sort_arr[i]) { 
+				        i++;
+					   count++;
+				} 
+			} 
+			el_down.innerHTML = count; 
+		} 
+	</script> 
+</body> 
+
+</html> 
